@@ -22,17 +22,7 @@ namespace ProcessorSimulator.Controls
 
         private void MemorySegmentDisplay_Click(object sender, EventArgs e)
         {
-            if ((e as MouseEventArgs).X < valueXMin)
-            {
-                JumpToAdress jumpBox = new JumpToAdress(segment, SelectedOffset);
-                if (jumpBox.ShowDialog() == DialogResult.OK)
-                {
-                    segment = jumpBox.Segment;
-                    baseOffset = jumpBox.Offset % BytesPerLine;
-                    SelectedOffset = jumpBox.Offset;
-                    Invalidate();
-                }
-            }
+            
         }
 
         private void MemorySegmentDisplay_DoubleClick(object sender, EventArgs e)

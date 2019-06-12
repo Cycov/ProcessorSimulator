@@ -15,13 +15,14 @@ namespace ProcessorSimulator
     {
         Memory mainMemory;
         private string assemblyFileName;
+        private static readonly int defaultSPValue = 0x4000;
 
         public MainForm()
         {
             InitializeComponent();
             InitializeRuntimeElements();
             InitializeSeqencer();
-            mainMemory = new Memory(131071); // double 65535 because it's represented in bytes not words
+            mainMemory = new Memory(131070); // double 65535 because it's represented in bytes not words
             memorySegmentDisplay1.Init(mainMemory, new ProcessorSimulator.Controls.Register());
 
             DoubleBuffered = true;
@@ -53,8 +54,15 @@ namespace ProcessorSimulator
             {
                 assemblyFileName = openFileDialog1.FileName;
                 string[] lines = File.ReadAllLines(assemblyFileName);
-                var output = (new Assembler.Parser()).Parse(lines);
-                mainMemory.SetBlock(0, output);
+                try
+                {
+                    var output = (new Assembler.Parser()).Parse(lines);
+                    mainMemory.SetBlock(0, output);
+                }
+                catch (Assembler.ParseException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -93,7 +101,7 @@ namespace ProcessorSimulator
             registerMDR.Value = 0;
             RegisterMIR.Value = 0;
             registerPC.Value = 0;
-            registerSP.Value = 0;
+            registerSP.Value = (ushort)defaultSPValue;
             registerT.Value = 0;
             VirtualRegDBUS.Value = 0;
             VirtualRegRBUS.Value = 0;
@@ -162,6 +170,69 @@ namespace ProcessorSimulator
                 memory.SetBlock(0, output);
                 File.WriteAllBytes(assemblyFileName + ".bin", memory.GetAllBytes());
             }
+        }
+
+        private void HexadecimalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            binaryToolStripMenuItem.Checked = false;
+            decimalToolStripMenuItem.Checked = false;
+            hexadecimalToolStripMenuItem.Checked = true;
+
+            registerMDR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
+            registerSP.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
+            registerADR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
+            registerT.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
+            registerPC.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
+            registerIVR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
+            registerIR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
+
+            VirtualRegDBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
+            VirtualRegSBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
+            VirtualRegRBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
+
+            RegisterMAR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
+        }
+
+        private void DecimalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            binaryToolStripMenuItem.Checked = false;
+            decimalToolStripMenuItem.Checked = true;
+            hexadecimalToolStripMenuItem.Checked = false;
+
+            registerMDR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
+            registerSP.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
+            registerADR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
+            registerT.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
+            registerPC.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
+            registerIVR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
+            registerIR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
+
+            VirtualRegDBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
+            VirtualRegSBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
+            VirtualRegRBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
+
+            RegisterMAR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
+        }
+
+        private void BinaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            binaryToolStripMenuItem.Checked = true;
+            decimalToolStripMenuItem.Checked = false;
+            hexadecimalToolStripMenuItem.Checked = false;
+
+            registerMDR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
+            registerSP.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
+            registerADR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
+            registerT.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
+            registerPC.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
+            registerIVR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
+            registerIR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
+
+            VirtualRegDBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
+            VirtualRegSBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
+            VirtualRegRBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
+
+            RegisterMAR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
         }
     }
 }

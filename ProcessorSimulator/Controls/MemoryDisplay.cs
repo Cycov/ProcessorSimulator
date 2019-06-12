@@ -22,25 +22,48 @@ namespace ProcessorSimulator.Controls
         [Category("Colors")]
         public Color OffsetsForeground { get; set; } = Color.Black;
         [Category("Colors")]
-        public Color ValueSelected { get; set; } = Color.Red;
+        public Color ValueSelected
+        {
+            get => valueSelected;
+            set
+            {
+                valueSelectedBrush.Dispose();
+                valueSelectedBrush = new SolidBrush(value);
+                valueSelected = value;
+                Invalidate();
+            }
+        }
         [Category("Colors")]
         public Color ValuesBackground { get; set; } = DefaultBackColor;
         [Category("Colors")]
-        public Color ValuesForeground { get; set; } = Color.BlueViolet;
+        public Color ValuesForeground
+        {
+            get => valuesForeground;
+            set
+            {
+                valuesForegroundBrush.Dispose();
+                valuesForegroundBrush = new SolidBrush(value);
+                valuesForeground = value;
+                Invalidate();
+            }
+        }
+        private Color valuesForeground = Color.BlueViolet;
 
-
-        public int BytesPerLine { get => _bytesPerLine;
-        set
+        public int BytesPerLine
+        {
+            get => _bytesPerLine;
+            set
             {
                 _bytesPerLine = (value % 2 == 0) ? value : throw new ArgumentException("Please use a even size");
             }
-        } private int _bytesPerLine = 2;
+        }
+        private int _bytesPerLine = 2;
 
         public ushort SelectedOffset { get; set; }
 
 
         //Drawing stuff
-        protected readonly int leftRectangleWidth = 50,  topBarHeight = 14 , lineHeight = 14, valueXMin = 60, drawnByteLength = 50;
+        protected readonly int leftRectangleWidth = 50, topBarHeight = 14, lineHeight = 14, valueXMin = 60, drawnByteLength = 50;
         protected Font boldedFont;
         protected int maxLines;
         protected SolidBrush headerBackgroundBrush, headerForegroundBrush, offsetsBackgroundBrush, offsetsForegroundBrush, valueSelectedBrush, valuesForegroundBrush;
@@ -50,7 +73,7 @@ namespace ProcessorSimulator.Controls
         protected int offset;
         protected ushort segment, size = ushort.MaxValue;
         protected int baseOffset;   //Left top most offset
-
+        private Color valueSelected = Color.Red;
 
         public MemoryDisplay()
         {
@@ -64,8 +87,10 @@ namespace ProcessorSimulator.Controls
             offsetsBackgroundBrush = new SolidBrush(OffsetsBackground);
             offsetsForegroundBrush = new SolidBrush(OffsetsForeground);
             valuesForegroundBrush = new SolidBrush(ValuesForeground);
-            valueSelectedBrush = new SolidBrush(ValueSelected);
+            valueSelectedBrush = new SolidBrush(valueSelected);
             BackColor = ValuesBackground;
+
+            DoubleBuffered = true;
         }
 
         /// <summary>
@@ -106,19 +131,33 @@ namespace ProcessorSimulator.Controls
         private void MemoryDisplay_Click(object sender, EventArgs e)
         {
             MouseEventArgs arg = e as MouseEventArgs;
-            if (arg.X < valueXMin || arg.Y < topBarHeight)
+
+            if (arg.Y < topBarHeight)
                 return;
-            int x = arg.X - valueXMin;
-            x /= drawnByteLength;
+            if (arg.X < valueXMin)
+            {
+                JumpToAdress jumpBox = new JumpToAdress(segment, 0);
+                if (jumpBox.ShowDialog() == DialogResult.OK)
+                {
+                    segment = jumpBox.Segment;
+                    vScrollBar.Value = jumpBox.Offset / BytesPerLine;
+                    SelectedOffset = jumpBox.Offset;
+                }
+            }
+            else
+            {
+                int x = arg.X - valueXMin;
+                x /= drawnByteLength;
 
-            int y = arg.Y - topBarHeight;
-            y /= lineHeight;
+                int y = arg.Y - topBarHeight;
+                y /= lineHeight;
 
-            int offset = baseOffset + y * _bytesPerLine + (x * 2);
-            if (offset % 2 == 1)
-                offset++;
-            if (offset < size)
-                SelectedOffset = (ushort)offset;
+                int offset = baseOffset + y * _bytesPerLine + (x * 2);
+                if (offset % 2 == 1)
+                    offset++;
+                if (offset < size)
+                    SelectedOffset = (ushort)offset;
+            }
             Invalidate();
         }
 

@@ -75,23 +75,25 @@
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pauseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.assemblerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flagsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assemblerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.binaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.decimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hexadecimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.RegisterMAR = new ProcessorSimulator.Controls.Register();
             this.MIRRegisterPanel = new System.Windows.Forms.Panel();
             this.RegisterMIR = new ProcessorSimulator.Controls.MIRRegister();
             this.otherOperationsSourcePanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.VirtualRegRBUS = new ProcessorSimulator.Controls.Register();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.VirtualRegDBUS = new ProcessorSimulator.Controls.Register();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.VirtualRegSBUS = new ProcessorSimulator.Controls.Register();
             this.previousActivatedCommandsListBox = new System.Windows.Forms.ListBox();
             this.runTimer = new System.Windows.Forms.Timer(this.components);
@@ -106,17 +108,14 @@
             this.MDRRegisterPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.MIRRegisterPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // testBtn
             // 
-            this.testBtn.Location = new System.Drawing.Point(56, 33);
-            this.testBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.testBtn.Location = new System.Drawing.Point(75, 41);
+            this.testBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.testBtn.Name = "testBtn";
-            this.testBtn.Size = new System.Drawing.Size(122, 30);
+            this.testBtn.Size = new System.Drawing.Size(163, 37);
             this.testBtn.TabIndex = 0;
             this.testBtn.Text = "Press me!";
             this.testBtn.UseVisualStyleBackColor = true;
@@ -125,9 +124,10 @@
             // 
             // aluDisplayPanel
             // 
-            this.aluDisplayPanel.Location = new System.Drawing.Point(999, 99);
+            this.aluDisplayPanel.Location = new System.Drawing.Point(1332, 122);
+            this.aluDisplayPanel.Margin = new System.Windows.Forms.Padding(4);
             this.aluDisplayPanel.Name = "aluDisplayPanel";
-            this.aluDisplayPanel.Size = new System.Drawing.Size(189, 177);
+            this.aluDisplayPanel.Size = new System.Drawing.Size(252, 218);
             this.aluDisplayPanel.TabIndex = 17;
             this.aluDisplayPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AluDisplayPanel_Paint);
             // 
@@ -149,9 +149,11 @@
             this.registersGroupBox.Controls.Add(this.register10);
             this.registersGroupBox.Controls.Add(this.register9);
             this.registersGroupBox.Controls.Add(this.register8);
-            this.registersGroupBox.Location = new System.Drawing.Point(822, 119);
+            this.registersGroupBox.Location = new System.Drawing.Point(1096, 146);
+            this.registersGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.registersGroupBox.Name = "registersGroupBox";
-            this.registersGroupBox.Size = new System.Drawing.Size(163, 108);
+            this.registersGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.registersGroupBox.Size = new System.Drawing.Size(217, 133);
             this.registersGroupBox.TabIndex = 18;
             this.registersGroupBox.TabStop = false;
             this.registersGroupBox.Text = "Registers";
@@ -161,12 +163,13 @@
             this.register14.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register14.Extended = false;
             this.register14.High = ((byte)(0));
-            this.register14.Location = new System.Drawing.Point(82, 90);
+            this.register14.Location = new System.Drawing.Point(109, 111);
             this.register14.Low = ((byte)(0));
+            this.register14.Margin = new System.Windows.Forms.Padding(5);
             this.register14.Name = "register14";
             this.register14.Readonly = false;
             this.register14.RegisterName = "R15";
-            this.register14.Size = new System.Drawing.Size(75, 14);
+            this.register14.Size = new System.Drawing.Size(100, 17);
             this.register14.TabIndex = 38;
             this.register14.Value = ((ushort)(0));
             // 
@@ -175,12 +178,13 @@
             this.register15.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register15.Extended = false;
             this.register15.High = ((byte)(0));
-            this.register15.Location = new System.Drawing.Point(82, 79);
+            this.register15.Location = new System.Drawing.Point(109, 97);
             this.register15.Low = ((byte)(0));
+            this.register15.Margin = new System.Windows.Forms.Padding(5);
             this.register15.Name = "register15";
             this.register15.Readonly = false;
             this.register15.RegisterName = "R14";
-            this.register15.Size = new System.Drawing.Size(75, 14);
+            this.register15.Size = new System.Drawing.Size(100, 17);
             this.register15.TabIndex = 38;
             this.register15.Value = ((ushort)(0));
             // 
@@ -189,12 +193,13 @@
             this.register13.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register13.Extended = false;
             this.register13.High = ((byte)(0));
-            this.register13.Location = new System.Drawing.Point(82, 68);
+            this.register13.Location = new System.Drawing.Point(109, 84);
             this.register13.Low = ((byte)(0));
+            this.register13.Margin = new System.Windows.Forms.Padding(5);
             this.register13.Name = "register13";
             this.register13.Readonly = false;
             this.register13.RegisterName = "R13";
-            this.register13.Size = new System.Drawing.Size(75, 14);
+            this.register13.Size = new System.Drawing.Size(100, 17);
             this.register13.TabIndex = 37;
             this.register13.Value = ((ushort)(0));
             // 
@@ -203,12 +208,13 @@
             this.register12.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register12.Extended = false;
             this.register12.High = ((byte)(0));
-            this.register12.Location = new System.Drawing.Point(82, 57);
+            this.register12.Location = new System.Drawing.Point(109, 70);
             this.register12.Low = ((byte)(0));
+            this.register12.Margin = new System.Windows.Forms.Padding(5);
             this.register12.Name = "register12";
             this.register12.Readonly = false;
             this.register12.RegisterName = "R12";
-            this.register12.Size = new System.Drawing.Size(75, 14);
+            this.register12.Size = new System.Drawing.Size(100, 17);
             this.register12.TabIndex = 36;
             this.register12.Value = ((ushort)(0));
             // 
@@ -217,12 +223,13 @@
             this.register7.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register7.Extended = false;
             this.register7.High = ((byte)(0));
-            this.register7.Location = new System.Drawing.Point(1, 90);
+            this.register7.Location = new System.Drawing.Point(1, 111);
             this.register7.Low = ((byte)(0));
+            this.register7.Margin = new System.Windows.Forms.Padding(5);
             this.register7.Name = "register7";
             this.register7.Readonly = false;
             this.register7.RegisterName = "R7";
-            this.register7.Size = new System.Drawing.Size(75, 14);
+            this.register7.Size = new System.Drawing.Size(100, 17);
             this.register7.TabIndex = 32;
             this.register7.Value = ((ushort)(0));
             // 
@@ -231,12 +238,13 @@
             this.register6.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register6.Extended = false;
             this.register6.High = ((byte)(0));
-            this.register6.Location = new System.Drawing.Point(1, 79);
+            this.register6.Location = new System.Drawing.Point(1, 97);
             this.register6.Low = ((byte)(0));
+            this.register6.Margin = new System.Windows.Forms.Padding(5);
             this.register6.Name = "register6";
             this.register6.Readonly = false;
             this.register6.RegisterName = "R6";
-            this.register6.Size = new System.Drawing.Size(75, 14);
+            this.register6.Size = new System.Drawing.Size(100, 17);
             this.register6.TabIndex = 31;
             this.register6.Value = ((ushort)(0));
             // 
@@ -245,12 +253,13 @@
             this.register5.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register5.Extended = false;
             this.register5.High = ((byte)(0));
-            this.register5.Location = new System.Drawing.Point(1, 68);
+            this.register5.Location = new System.Drawing.Point(1, 84);
             this.register5.Low = ((byte)(0));
+            this.register5.Margin = new System.Windows.Forms.Padding(5);
             this.register5.Name = "register5";
             this.register5.Readonly = false;
             this.register5.RegisterName = "R5";
-            this.register5.Size = new System.Drawing.Size(75, 14);
+            this.register5.Size = new System.Drawing.Size(100, 17);
             this.register5.TabIndex = 30;
             this.register5.Value = ((ushort)(0));
             // 
@@ -259,12 +268,13 @@
             this.register4.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register4.Extended = false;
             this.register4.High = ((byte)(0));
-            this.register4.Location = new System.Drawing.Point(1, 57);
+            this.register4.Location = new System.Drawing.Point(1, 70);
             this.register4.Low = ((byte)(0));
+            this.register4.Margin = new System.Windows.Forms.Padding(5);
             this.register4.Name = "register4";
             this.register4.Readonly = false;
             this.register4.RegisterName = "R4";
-            this.register4.Size = new System.Drawing.Size(75, 14);
+            this.register4.Size = new System.Drawing.Size(100, 17);
             this.register4.TabIndex = 29;
             this.register4.Value = ((ushort)(0));
             // 
@@ -273,12 +283,13 @@
             this.register3.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register3.Extended = false;
             this.register3.High = ((byte)(250));
-            this.register3.Location = new System.Drawing.Point(1, 46);
+            this.register3.Location = new System.Drawing.Point(1, 57);
             this.register3.Low = ((byte)(199));
+            this.register3.Margin = new System.Windows.Forms.Padding(5);
             this.register3.Name = "register3";
             this.register3.Readonly = false;
             this.register3.RegisterName = "R3";
-            this.register3.Size = new System.Drawing.Size(75, 14);
+            this.register3.Size = new System.Drawing.Size(100, 17);
             this.register3.TabIndex = 28;
             this.register3.Value = ((ushort)(64199));
             // 
@@ -287,12 +298,13 @@
             this.register2.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register2.Extended = false;
             this.register2.High = ((byte)(5));
-            this.register2.Location = new System.Drawing.Point(1, 35);
+            this.register2.Location = new System.Drawing.Point(1, 43);
             this.register2.Low = ((byte)(148));
+            this.register2.Margin = new System.Windows.Forms.Padding(5);
             this.register2.Name = "register2";
             this.register2.Readonly = false;
             this.register2.RegisterName = "R2";
-            this.register2.Size = new System.Drawing.Size(75, 14);
+            this.register2.Size = new System.Drawing.Size(100, 17);
             this.register2.TabIndex = 27;
             this.register2.Value = ((ushort)(1428));
             // 
@@ -301,12 +313,13 @@
             this.register1.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register1.Extended = false;
             this.register1.High = ((byte)(0));
-            this.register1.Location = new System.Drawing.Point(1, 24);
+            this.register1.Location = new System.Drawing.Point(1, 30);
             this.register1.Low = ((byte)(0));
+            this.register1.Margin = new System.Windows.Forms.Padding(5);
             this.register1.Name = "register1";
             this.register1.Readonly = false;
             this.register1.RegisterName = "R1";
-            this.register1.Size = new System.Drawing.Size(75, 14);
+            this.register1.Size = new System.Drawing.Size(100, 17);
             this.register1.TabIndex = 26;
             this.register1.Value = ((ushort)(0));
             // 
@@ -315,12 +328,13 @@
             this.register11.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register11.Extended = false;
             this.register11.High = ((byte)(0));
-            this.register11.Location = new System.Drawing.Point(82, 46);
+            this.register11.Location = new System.Drawing.Point(109, 57);
             this.register11.Low = ((byte)(0));
+            this.register11.Margin = new System.Windows.Forms.Padding(5);
             this.register11.Name = "register11";
             this.register11.Readonly = false;
             this.register11.RegisterName = "R11";
-            this.register11.Size = new System.Drawing.Size(75, 14);
+            this.register11.Size = new System.Drawing.Size(100, 17);
             this.register11.TabIndex = 35;
             this.register11.Value = ((ushort)(0));
             // 
@@ -329,12 +343,13 @@
             this.register0.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register0.Extended = false;
             this.register0.High = ((byte)(0));
-            this.register0.Location = new System.Drawing.Point(1, 13);
+            this.register0.Location = new System.Drawing.Point(1, 16);
             this.register0.Low = ((byte)(83));
+            this.register0.Margin = new System.Windows.Forms.Padding(5);
             this.register0.Name = "register0";
             this.register0.Readonly = false;
             this.register0.RegisterName = "R0";
-            this.register0.Size = new System.Drawing.Size(75, 14);
+            this.register0.Size = new System.Drawing.Size(100, 17);
             this.register0.TabIndex = 25;
             this.register0.Value = ((ushort)(83));
             // 
@@ -343,12 +358,13 @@
             this.register10.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register10.Extended = false;
             this.register10.High = ((byte)(0));
-            this.register10.Location = new System.Drawing.Point(82, 35);
+            this.register10.Location = new System.Drawing.Point(109, 43);
             this.register10.Low = ((byte)(0));
+            this.register10.Margin = new System.Windows.Forms.Padding(5);
             this.register10.Name = "register10";
             this.register10.Readonly = false;
             this.register10.RegisterName = "R10";
-            this.register10.Size = new System.Drawing.Size(75, 14);
+            this.register10.Size = new System.Drawing.Size(100, 17);
             this.register10.TabIndex = 34;
             this.register10.Value = ((ushort)(0));
             // 
@@ -357,12 +373,13 @@
             this.register9.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register9.Extended = false;
             this.register9.High = ((byte)(0));
-            this.register9.Location = new System.Drawing.Point(82, 24);
+            this.register9.Location = new System.Drawing.Point(109, 30);
             this.register9.Low = ((byte)(0));
+            this.register9.Margin = new System.Windows.Forms.Padding(5);
             this.register9.Name = "register9";
             this.register9.Readonly = false;
             this.register9.RegisterName = "R9";
-            this.register9.Size = new System.Drawing.Size(75, 14);
+            this.register9.Size = new System.Drawing.Size(100, 17);
             this.register9.TabIndex = 33;
             this.register9.Value = ((ushort)(0));
             // 
@@ -371,12 +388,13 @@
             this.register8.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.register8.Extended = false;
             this.register8.High = ((byte)(0));
-            this.register8.Location = new System.Drawing.Point(82, 13);
+            this.register8.Location = new System.Drawing.Point(109, 16);
             this.register8.Low = ((byte)(0));
+            this.register8.Margin = new System.Windows.Forms.Padding(5);
             this.register8.Name = "register8";
             this.register8.Readonly = false;
             this.register8.RegisterName = "R8";
-            this.register8.Size = new System.Drawing.Size(75, 14);
+            this.register8.Size = new System.Drawing.Size(100, 17);
             this.register8.TabIndex = 32;
             this.register8.Value = ((ushort)(0));
             // 
@@ -387,13 +405,13 @@
             this.memorySegmentDisplay1.BytesPerLine = 16;
             this.memorySegmentDisplay1.HeaderBackground = System.Drawing.Color.LightBlue;
             this.memorySegmentDisplay1.HeaderForeground = System.Drawing.Color.Black;
-            this.memorySegmentDisplay1.Location = new System.Drawing.Point(141, 418);
-            this.memorySegmentDisplay1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.memorySegmentDisplay1.Location = new System.Drawing.Point(188, 514);
+            this.memorySegmentDisplay1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.memorySegmentDisplay1.Name = "memorySegmentDisplay1";
             this.memorySegmentDisplay1.OffsetsBackground = System.Drawing.Color.LightGray;
             this.memorySegmentDisplay1.OffsetsForeground = System.Drawing.Color.Black;
             this.memorySegmentDisplay1.SelectedOffset = ((ushort)(0));
-            this.memorySegmentDisplay1.Size = new System.Drawing.Size(479, 113);
+            this.memorySegmentDisplay1.Size = new System.Drawing.Size(639, 139);
             this.memorySegmentDisplay1.TabIndex = 19;
             this.memorySegmentDisplay1.ValuesBackground = System.Drawing.SystemColors.Control;
             this.memorySegmentDisplay1.ValueSelected = System.Drawing.Color.Red;
@@ -403,9 +421,10 @@
             // 
             this.PCRegisterPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PCRegisterPanel.Controls.Add(this.registerPC);
-            this.PCRegisterPanel.Location = new System.Drawing.Point(495, 149);
+            this.PCRegisterPanel.Location = new System.Drawing.Point(660, 183);
+            this.PCRegisterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.PCRegisterPanel.Name = "PCRegisterPanel";
-            this.PCRegisterPanel.Size = new System.Drawing.Size(99, 36);
+            this.PCRegisterPanel.Size = new System.Drawing.Size(131, 43);
             this.PCRegisterPanel.TabIndex = 21;
             // 
             // registerPC
@@ -413,12 +432,13 @@
             this.registerPC.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.registerPC.Extended = false;
             this.registerPC.High = ((byte)(0));
-            this.registerPC.Location = new System.Drawing.Point(3, 9);
+            this.registerPC.Location = new System.Drawing.Point(4, 11);
             this.registerPC.Low = ((byte)(0));
+            this.registerPC.Margin = new System.Windows.Forms.Padding(5);
             this.registerPC.Name = "registerPC";
             this.registerPC.Readonly = false;
             this.registerPC.RegisterName = "PC";
-            this.registerPC.Size = new System.Drawing.Size(75, 14);
+            this.registerPC.Size = new System.Drawing.Size(100, 17);
             this.registerPC.TabIndex = 0;
             this.registerPC.Value = ((ushort)(0));
             // 
@@ -426,9 +446,10 @@
             // 
             this.TRegisterPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.TRegisterPanel.Controls.Add(this.registerT);
-            this.TRegisterPanel.Location = new System.Drawing.Point(383, 149);
+            this.TRegisterPanel.Location = new System.Drawing.Point(511, 183);
+            this.TRegisterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.TRegisterPanel.Name = "TRegisterPanel";
-            this.TRegisterPanel.Size = new System.Drawing.Size(102, 36);
+            this.TRegisterPanel.Size = new System.Drawing.Size(135, 43);
             this.TRegisterPanel.TabIndex = 21;
             // 
             // registerT
@@ -436,12 +457,13 @@
             this.registerT.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.registerT.Extended = false;
             this.registerT.High = ((byte)(0));
-            this.registerT.Location = new System.Drawing.Point(3, 9);
+            this.registerT.Location = new System.Drawing.Point(4, 11);
             this.registerT.Low = ((byte)(0));
+            this.registerT.Margin = new System.Windows.Forms.Padding(5);
             this.registerT.Name = "registerT";
             this.registerT.Readonly = false;
             this.registerT.RegisterName = "T";
-            this.registerT.Size = new System.Drawing.Size(75, 14);
+            this.registerT.Size = new System.Drawing.Size(100, 17);
             this.registerT.TabIndex = 0;
             this.registerT.Value = ((ushort)(0));
             // 
@@ -449,32 +471,35 @@
             // 
             this.SPRegisterPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.SPRegisterPanel.Controls.Add(this.registerSP);
-            this.SPRegisterPanel.Location = new System.Drawing.Point(182, 149);
+            this.SPRegisterPanel.Location = new System.Drawing.Point(243, 183);
+            this.SPRegisterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.SPRegisterPanel.Name = "SPRegisterPanel";
-            this.SPRegisterPanel.Size = new System.Drawing.Size(102, 36);
+            this.SPRegisterPanel.Size = new System.Drawing.Size(135, 43);
             this.SPRegisterPanel.TabIndex = 21;
             // 
             // registerSP
             // 
             this.registerSP.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.registerSP.Extended = false;
-            this.registerSP.High = ((byte)(0));
-            this.registerSP.Location = new System.Drawing.Point(3, 9);
+            this.registerSP.High = ((byte)(64));
+            this.registerSP.Location = new System.Drawing.Point(4, 11);
             this.registerSP.Low = ((byte)(0));
+            this.registerSP.Margin = new System.Windows.Forms.Padding(5);
             this.registerSP.Name = "registerSP";
             this.registerSP.Readonly = false;
             this.registerSP.RegisterName = "SP";
-            this.registerSP.Size = new System.Drawing.Size(75, 14);
+            this.registerSP.Size = new System.Drawing.Size(100, 17);
             this.registerSP.TabIndex = 0;
-            this.registerSP.Value = ((ushort)(0));
+            this.registerSP.Value = ((ushort)(16384));
             // 
             // IRRegisterPanel
             // 
             this.IRRegisterPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.IRRegisterPanel.Controls.Add(this.registerIR);
-            this.IRRegisterPanel.Location = new System.Drawing.Point(56, 572);
+            this.IRRegisterPanel.Location = new System.Drawing.Point(75, 704);
+            this.IRRegisterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.IRRegisterPanel.Name = "IRRegisterPanel";
-            this.IRRegisterPanel.Size = new System.Drawing.Size(157, 36);
+            this.IRRegisterPanel.Size = new System.Drawing.Size(208, 43);
             this.IRRegisterPanel.TabIndex = 21;
             // 
             // registerIR
@@ -482,12 +507,13 @@
             this.registerIR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.registerIR.Extended = false;
             this.registerIR.High = ((byte)(0));
-            this.registerIR.Location = new System.Drawing.Point(3, 9);
+            this.registerIR.Location = new System.Drawing.Point(4, 11);
             this.registerIR.Low = ((byte)(0));
+            this.registerIR.Margin = new System.Windows.Forms.Padding(5);
             this.registerIR.Name = "registerIR";
             this.registerIR.Readonly = false;
             this.registerIR.RegisterName = "IR";
-            this.registerIR.Size = new System.Drawing.Size(138, 14);
+            this.registerIR.Size = new System.Drawing.Size(184, 17);
             this.registerIR.TabIndex = 0;
             this.registerIR.Value = ((ushort)(0));
             // 
@@ -495,9 +521,10 @@
             // 
             this.IVRRegisterPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.IVRRegisterPanel.Controls.Add(this.registerIVR);
-            this.IVRRegisterPanel.Location = new System.Drawing.Point(600, 149);
+            this.IVRRegisterPanel.Location = new System.Drawing.Point(800, 183);
+            this.IVRRegisterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.IVRRegisterPanel.Name = "IVRRegisterPanel";
-            this.IVRRegisterPanel.Size = new System.Drawing.Size(102, 36);
+            this.IVRRegisterPanel.Size = new System.Drawing.Size(135, 43);
             this.IVRRegisterPanel.TabIndex = 21;
             // 
             // registerIVR
@@ -505,20 +532,22 @@
             this.registerIVR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.registerIVR.Extended = false;
             this.registerIVR.High = ((byte)(0));
-            this.registerIVR.Location = new System.Drawing.Point(3, 9);
+            this.registerIVR.Location = new System.Drawing.Point(4, 11);
             this.registerIVR.Low = ((byte)(0));
+            this.registerIVR.Margin = new System.Windows.Forms.Padding(5);
             this.registerIVR.Name = "registerIVR";
             this.registerIVR.Readonly = false;
             this.registerIVR.RegisterName = "IVR";
-            this.registerIVR.Size = new System.Drawing.Size(75, 14);
+            this.registerIVR.Size = new System.Drawing.Size(100, 17);
             this.registerIVR.TabIndex = 0;
             this.registerIVR.Value = ((ushort)(0));
             // 
             // FLAGSRegister
             // 
-            this.FLAGSRegister.Location = new System.Drawing.Point(3, 3);
+            this.FLAGSRegister.Location = new System.Drawing.Point(4, 4);
+            this.FLAGSRegister.Margin = new System.Windows.Forms.Padding(5);
             this.FLAGSRegister.Name = "FLAGSRegister";
-            this.FLAGSRegister.Size = new System.Drawing.Size(100, 100);
+            this.FLAGSRegister.Size = new System.Drawing.Size(133, 123);
             this.FLAGSRegister.TabIndex = 22;
             this.FLAGSRegister.Value = ((ushort)(0));
             // 
@@ -526,18 +555,20 @@
             // 
             this.FLAGSRegisterPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.FLAGSRegisterPanel.Controls.Add(this.FLAGSRegister);
-            this.FLAGSRegisterPanel.Location = new System.Drawing.Point(708, 119);
+            this.FLAGSRegisterPanel.Location = new System.Drawing.Point(944, 146);
+            this.FLAGSRegisterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.FLAGSRegisterPanel.Name = "FLAGSRegisterPanel";
-            this.FLAGSRegisterPanel.Size = new System.Drawing.Size(108, 116);
+            this.FLAGSRegisterPanel.Size = new System.Drawing.Size(143, 142);
             this.FLAGSRegisterPanel.TabIndex = 23;
             // 
             // ADRRegisterPanel
             // 
             this.ADRRegisterPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ADRRegisterPanel.Controls.Add(this.registerADR);
-            this.ADRRegisterPanel.Location = new System.Drawing.Point(290, 149);
+            this.ADRRegisterPanel.Location = new System.Drawing.Point(387, 183);
+            this.ADRRegisterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ADRRegisterPanel.Name = "ADRRegisterPanel";
-            this.ADRRegisterPanel.Size = new System.Drawing.Size(87, 36);
+            this.ADRRegisterPanel.Size = new System.Drawing.Size(115, 43);
             this.ADRRegisterPanel.TabIndex = 24;
             // 
             // registerADR
@@ -545,12 +576,13 @@
             this.registerADR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.registerADR.Extended = false;
             this.registerADR.High = ((byte)(0));
-            this.registerADR.Location = new System.Drawing.Point(5, 9);
+            this.registerADR.Location = new System.Drawing.Point(7, 11);
             this.registerADR.Low = ((byte)(0));
+            this.registerADR.Margin = new System.Windows.Forms.Padding(5);
             this.registerADR.Name = "registerADR";
             this.registerADR.Readonly = false;
             this.registerADR.RegisterName = "ADR";
-            this.registerADR.Size = new System.Drawing.Size(75, 14);
+            this.registerADR.Size = new System.Drawing.Size(100, 17);
             this.registerADR.TabIndex = 0;
             this.registerADR.Value = ((ushort)(0));
             // 
@@ -558,9 +590,10 @@
             // 
             this.MDRRegisterPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.MDRRegisterPanel.Controls.Add(this.registerMDR);
-            this.MDRRegisterPanel.Location = new System.Drawing.Point(71, 149);
+            this.MDRRegisterPanel.Location = new System.Drawing.Point(95, 183);
+            this.MDRRegisterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MDRRegisterPanel.Name = "MDRRegisterPanel";
-            this.MDRRegisterPanel.Size = new System.Drawing.Size(105, 36);
+            this.MDRRegisterPanel.Size = new System.Drawing.Size(139, 43);
             this.MDRRegisterPanel.TabIndex = 24;
             // 
             // registerMDR
@@ -568,25 +601,29 @@
             this.registerMDR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.registerMDR.Extended = true;
             this.registerMDR.High = ((byte)(0));
-            this.registerMDR.Location = new System.Drawing.Point(2, 9);
+            this.registerMDR.Location = new System.Drawing.Point(3, 11);
             this.registerMDR.Low = ((byte)(0));
+            this.registerMDR.Margin = new System.Windows.Forms.Padding(5);
             this.registerMDR.Name = "registerMDR";
             this.registerMDR.Readonly = false;
             this.registerMDR.RegisterName = "MDR";
-            this.registerMDR.Size = new System.Drawing.Size(96, 14);
+            this.registerMDR.Size = new System.Drawing.Size(128, 17);
             this.registerMDR.TabIndex = 0;
             this.registerMDR.Value = ((ushort)(0));
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.simulationToolStripMenuItem,
             this.resetToolStripMenuItem,
-            this.assemblerToolStripMenuItem});
+            this.assemblerToolStripMenuItem,
+            this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1310, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1747, 28);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -597,14 +634,14 @@
             this.reloadToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             this.loadToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.loadToolStripMenuItem.Text = "&Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
@@ -612,7 +649,7 @@
             // 
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
             this.reloadToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.reloadToolStripMenuItem.Text = "&Reload";
             this.reloadToolStripMenuItem.Click += new System.EventHandler(this.ReloadToolStripMenuItem_Click);
             // 
@@ -620,7 +657,7 @@
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.quitToolStripMenuItem.Text = "&Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
@@ -632,14 +669,14 @@
             this.pauseToolStripMenuItem,
             this.stepToolStripMenuItem});
             this.simulationToolStripMenuItem.Name = "simulationToolStripMenuItem";
-            this.simulationToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.simulationToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
             this.simulationToolStripMenuItem.Text = "&Simulation";
             // 
             // runToolStripMenuItem
             // 
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
             this.runToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.runToolStripMenuItem.Text = "&Run";
             this.runToolStripMenuItem.Click += new System.EventHandler(this.RunToolStripMenuItem_Click);
             // 
@@ -647,7 +684,7 @@
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
             this.stopToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.stopToolStripMenuItem.Text = "&Stop";
             this.stopToolStripMenuItem.Click += new System.EventHandler(this.StopToolStripMenuItem_Click);
             // 
@@ -655,7 +692,7 @@
             // 
             this.pauseToolStripMenuItem.Name = "pauseToolStripMenuItem";
             this.pauseToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pauseToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.pauseToolStripMenuItem.Text = "&Pause";
             this.pauseToolStripMenuItem.Click += new System.EventHandler(this.PauseSimulation);
             // 
@@ -663,24 +700,9 @@
             // 
             this.stepToolStripMenuItem.Name = "stepToolStripMenuItem";
             this.stepToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F10;
-            this.stepToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stepToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.stepToolStripMenuItem.Text = "S&tep";
             this.stepToolStripMenuItem.Click += new System.EventHandler(this.StepToolStripMenuItem_Click);
-            // 
-            // assemblerToolStripMenuItem
-            // 
-            this.assemblerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toFileToolStripMenuItem});
-            this.assemblerToolStripMenuItem.Name = "assemblerToolStripMenuItem";
-            this.assemblerToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.assemblerToolStripMenuItem.Text = "&Assembler";
-            // 
-            // toFileToolStripMenuItem
-            // 
-            this.toFileToolStripMenuItem.Name = "toFileToolStripMenuItem";
-            this.toFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.toFileToolStripMenuItem.Text = "&To file";
-            this.toFileToolStripMenuItem.Click += new System.EventHandler(this.ToFileToolStripMenuItem_Click);
             // 
             // resetToolStripMenuItem
             // 
@@ -690,27 +712,27 @@
             this.dataToolStripMenuItem,
             this.allToolStripMenuItem});
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.resetToolStripMenuItem.Text = "&Reset";
             // 
             // flagsToolStripMenuItem
             // 
             this.flagsToolStripMenuItem.Name = "flagsToolStripMenuItem";
-            this.flagsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.flagsToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.flagsToolStripMenuItem.Text = "&Flags";
             this.flagsToolStripMenuItem.Click += new System.EventHandler(this.ClearFlags);
             // 
             // registersToolStripMenuItem
             // 
             this.registersToolStripMenuItem.Name = "registersToolStripMenuItem";
-            this.registersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registersToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.registersToolStripMenuItem.Text = "&Registers";
             this.registersToolStripMenuItem.Click += new System.EventHandler(this.ClearRegisters);
             // 
             // dataToolStripMenuItem
             // 
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.dataToolStripMenuItem.Text = "&Data";
             this.dataToolStripMenuItem.Click += new System.EventHandler(this.ClearData);
             // 
@@ -718,9 +740,65 @@
             // 
             this.allToolStripMenuItem.Name = "allToolStripMenuItem";
             this.allToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
-            this.allToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.allToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.allToolStripMenuItem.Text = "&All";
             this.allToolStripMenuItem.Click += new System.EventHandler(this.ClearAll);
+            // 
+            // assemblerToolStripMenuItem
+            // 
+            this.assemblerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toFileToolStripMenuItem});
+            this.assemblerToolStripMenuItem.Name = "assemblerToolStripMenuItem";
+            this.assemblerToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
+            this.assemblerToolStripMenuItem.Text = "&Assembler";
+            // 
+            // toFileToolStripMenuItem
+            // 
+            this.toFileToolStripMenuItem.Name = "toFileToolStripMenuItem";
+            this.toFileToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.toFileToolStripMenuItem.Text = "&To file";
+            this.toFileToolStripMenuItem.Click += new System.EventHandler(this.ToFileToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registersToolStripMenuItem1});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.viewToolStripMenuItem.Text = "&View";
+            // 
+            // registersToolStripMenuItem1
+            // 
+            this.registersToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.binaryToolStripMenuItem,
+            this.decimalToolStripMenuItem,
+            this.hexadecimalToolStripMenuItem});
+            this.registersToolStripMenuItem1.Name = "registersToolStripMenuItem1";
+            this.registersToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
+            this.registersToolStripMenuItem1.Text = "&Registers";
+            // 
+            // binaryToolStripMenuItem
+            // 
+            this.binaryToolStripMenuItem.Name = "binaryToolStripMenuItem";
+            this.binaryToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.binaryToolStripMenuItem.Text = "&Binary";
+            this.binaryToolStripMenuItem.Click += new System.EventHandler(this.BinaryToolStripMenuItem_Click);
+            // 
+            // decimalToolStripMenuItem
+            // 
+            this.decimalToolStripMenuItem.Name = "decimalToolStripMenuItem";
+            this.decimalToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.decimalToolStripMenuItem.Text = "&Decimal";
+            this.decimalToolStripMenuItem.Click += new System.EventHandler(this.DecimalToolStripMenuItem_Click);
+            // 
+            // hexadecimalToolStripMenuItem
+            // 
+            this.hexadecimalToolStripMenuItem.Checked = true;
+            this.hexadecimalToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.hexadecimalToolStripMenuItem.Name = "hexadecimalToolStripMenuItem";
+            this.hexadecimalToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.hexadecimalToolStripMenuItem.Text = "&Hexadecimal";
+            this.hexadecimalToolStripMenuItem.Click += new System.EventHandler(this.HexadecimalToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -731,12 +809,13 @@
             this.RegisterMAR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Decimal;
             this.RegisterMAR.Extended = false;
             this.RegisterMAR.High = ((byte)(0));
-            this.RegisterMAR.Location = new System.Drawing.Point(6, 3);
+            this.RegisterMAR.Location = new System.Drawing.Point(8, 4);
             this.RegisterMAR.Low = ((byte)(0));
+            this.RegisterMAR.Margin = new System.Windows.Forms.Padding(5);
             this.RegisterMAR.Name = "RegisterMAR";
             this.RegisterMAR.Readonly = false;
             this.RegisterMAR.RegisterName = "MAR";
-            this.RegisterMAR.Size = new System.Drawing.Size(99, 14);
+            this.RegisterMAR.Size = new System.Drawing.Size(132, 17);
             this.RegisterMAR.TabIndex = 27;
             this.RegisterMAR.Value = ((ushort)(0));
             // 
@@ -744,9 +823,10 @@
             // 
             this.MIRRegisterPanel.Controls.Add(this.RegisterMIR);
             this.MIRRegisterPanel.Controls.Add(this.RegisterMAR);
-            this.MIRRegisterPanel.Location = new System.Drawing.Point(833, 510);
+            this.MIRRegisterPanel.Location = new System.Drawing.Point(1111, 628);
+            this.MIRRegisterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MIRRegisterPanel.Name = "MIRRegisterPanel";
-            this.MIRRegisterPanel.Size = new System.Drawing.Size(440, 21);
+            this.MIRRegisterPanel.Size = new System.Drawing.Size(587, 26);
             this.MIRRegisterPanel.TabIndex = 28;
             // 
             // RegisterMIR
@@ -754,98 +834,78 @@
             this.RegisterMIR.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Binary;
             this.RegisterMIR.Extended = false;
             this.RegisterMIR.High = ((byte)(0));
-            this.RegisterMIR.Location = new System.Drawing.Point(111, 4);
+            this.RegisterMIR.Location = new System.Drawing.Point(148, 5);
             this.RegisterMIR.LongValue = ((ulong)(0ul));
             this.RegisterMIR.Low = ((byte)(0));
+            this.RegisterMIR.Margin = new System.Windows.Forms.Padding(5);
             this.RegisterMIR.Name = "RegisterMIR";
             this.RegisterMIR.Readonly = true;
             this.RegisterMIR.RegisterName = "MIR";
-            this.RegisterMIR.Size = new System.Drawing.Size(326, 14);
+            this.RegisterMIR.Size = new System.Drawing.Size(435, 17);
             this.RegisterMIR.TabIndex = 28;
             this.RegisterMIR.Value = ((ushort)(0));
             // 
             // otherOperationsSourcePanel
             // 
-            this.otherOperationsSourcePanel.Location = new System.Drawing.Point(833, 418);
+            this.otherOperationsSourcePanel.Location = new System.Drawing.Point(1111, 514);
+            this.otherOperationsSourcePanel.Margin = new System.Windows.Forms.Padding(4);
             this.otherOperationsSourcePanel.Name = "otherOperationsSourcePanel";
-            this.otherOperationsSourcePanel.Size = new System.Drawing.Size(248, 35);
+            this.otherOperationsSourcePanel.Size = new System.Drawing.Size(331, 43);
             this.otherOperationsSourcePanel.TabIndex = 29;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.VirtualRegRBUS);
-            this.panel1.Location = new System.Drawing.Point(1125, 368);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(99, 36);
-            this.panel1.TabIndex = 21;
             // 
             // VirtualRegRBUS
             // 
             this.VirtualRegRBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.VirtualRegRBUS.Extended = true;
             this.VirtualRegRBUS.High = ((byte)(0));
-            this.VirtualRegRBUS.Location = new System.Drawing.Point(3, 9);
+            this.VirtualRegRBUS.Location = new System.Drawing.Point(1526, 41);
             this.VirtualRegRBUS.Low = ((byte)(0));
+            this.VirtualRegRBUS.Margin = new System.Windows.Forms.Padding(5);
             this.VirtualRegRBUS.Name = "VirtualRegRBUS";
             this.VirtualRegRBUS.Readonly = false;
             this.VirtualRegRBUS.RegisterName = "RBUS";
-            this.VirtualRegRBUS.Size = new System.Drawing.Size(89, 14);
+            this.VirtualRegRBUS.Size = new System.Drawing.Size(245, 17);
             this.VirtualRegRBUS.TabIndex = 0;
             this.VirtualRegRBUS.Value = ((ushort)(0));
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.VirtualRegDBUS);
-            this.panel2.Location = new System.Drawing.Point(1125, 410);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(99, 36);
-            this.panel2.TabIndex = 21;
             // 
             // VirtualRegDBUS
             // 
             this.VirtualRegDBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.VirtualRegDBUS.Extended = true;
             this.VirtualRegDBUS.High = ((byte)(0));
-            this.VirtualRegDBUS.Location = new System.Drawing.Point(3, 9);
+            this.VirtualRegDBUS.Location = new System.Drawing.Point(1526, 349);
             this.VirtualRegDBUS.Low = ((byte)(0));
+            this.VirtualRegDBUS.Margin = new System.Windows.Forms.Padding(5);
             this.VirtualRegDBUS.Name = "VirtualRegDBUS";
             this.VirtualRegDBUS.Readonly = false;
             this.VirtualRegDBUS.RegisterName = "DBUS";
-            this.VirtualRegDBUS.Size = new System.Drawing.Size(89, 14);
+            this.VirtualRegDBUS.Size = new System.Drawing.Size(245, 17);
             this.VirtualRegDBUS.TabIndex = 0;
             this.VirtualRegDBUS.Value = ((ushort)(0));
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.VirtualRegSBUS);
-            this.panel3.Location = new System.Drawing.Point(1125, 452);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(99, 36);
-            this.panel3.TabIndex = 21;
             // 
             // VirtualRegSBUS
             // 
             this.VirtualRegSBUS.DisplayMode = ProcessorSimulator.Controls.Register.RegisterDisplayMode.Hexadecimal;
             this.VirtualRegSBUS.Extended = true;
             this.VirtualRegSBUS.High = ((byte)(0));
-            this.VirtualRegSBUS.Location = new System.Drawing.Point(3, 9);
+            this.VirtualRegSBUS.Location = new System.Drawing.Point(1526, 410);
             this.VirtualRegSBUS.Low = ((byte)(0));
+            this.VirtualRegSBUS.Margin = new System.Windows.Forms.Padding(5);
             this.VirtualRegSBUS.Name = "VirtualRegSBUS";
             this.VirtualRegSBUS.Readonly = false;
             this.VirtualRegSBUS.RegisterName = "SBUS";
-            this.VirtualRegSBUS.Size = new System.Drawing.Size(89, 14);
+            this.VirtualRegSBUS.Size = new System.Drawing.Size(245, 17);
             this.VirtualRegSBUS.TabIndex = 0;
             this.VirtualRegSBUS.Value = ((ushort)(0));
             // 
             // previousActivatedCommandsListBox
             // 
             this.previousActivatedCommandsListBox.FormattingEnabled = true;
-            this.previousActivatedCommandsListBox.Location = new System.Drawing.Point(636, 418);
+            this.previousActivatedCommandsListBox.ItemHeight = 16;
+            this.previousActivatedCommandsListBox.Location = new System.Drawing.Point(848, 514);
+            this.previousActivatedCommandsListBox.Margin = new System.Windows.Forms.Padding(4);
             this.previousActivatedCommandsListBox.Name = "previousActivatedCommandsListBox";
-            this.previousActivatedCommandsListBox.Size = new System.Drawing.Size(120, 121);
+            this.previousActivatedCommandsListBox.Size = new System.Drawing.Size(159, 148);
             this.previousActivatedCommandsListBox.TabIndex = 30;
             // 
             // runTimer
@@ -855,9 +915,12 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1310, 689);
+            this.ClientSize = new System.Drawing.Size(1747, 848);
+            this.Controls.Add(this.VirtualRegSBUS);
+            this.Controls.Add(this.VirtualRegDBUS);
+            this.Controls.Add(this.VirtualRegRBUS);
             this.Controls.Add(this.previousActivatedCommandsListBox);
             this.Controls.Add(this.otherOperationsSourcePanel);
             this.Controls.Add(this.MIRRegisterPanel);
@@ -868,9 +931,6 @@
             this.Controls.Add(this.SPRegisterPanel);
             this.Controls.Add(this.TRegisterPanel);
             this.Controls.Add(this.IVRRegisterPanel);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.PCRegisterPanel);
             this.Controls.Add(this.memorySegmentDisplay1);
             this.Controls.Add(this.registersGroupBox);
@@ -878,7 +938,7 @@
             this.Controls.Add(this.testBtn);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -894,9 +954,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.MIRRegisterPanel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -948,11 +1005,8 @@
         private System.Windows.Forms.Panel MIRRegisterPanel;
         private Controls.MIRRegister RegisterMIR;
         private System.Windows.Forms.Panel otherOperationsSourcePanel;
-        private System.Windows.Forms.Panel panel1;
         private Controls.Register VirtualRegRBUS;
-        private System.Windows.Forms.Panel panel2;
         private Controls.Register VirtualRegDBUS;
-        private System.Windows.Forms.Panel panel3;
         private Controls.Register VirtualRegSBUS;
         private System.Windows.Forms.ListBox previousActivatedCommandsListBox;
         private System.Windows.Forms.ToolStripMenuItem simulationToolStripMenuItem;
@@ -970,6 +1024,11 @@
         private System.Windows.Forms.ToolStripMenuItem registersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flagsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registersToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem binaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem decimalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hexadecimalToolStripMenuItem;
     }
 }
 

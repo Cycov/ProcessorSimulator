@@ -55,8 +55,14 @@ namespace ProcessorSimulator.Controls
         [Category("Definitions")]
         public RegisterDisplayMode DisplayMode
         {
-            get; set;
-        } = RegisterDisplayMode.Hexadecimal;
+            get => displayMode;
+            set
+            {
+                displayMode = value;
+                Invalidate();
+            }
+        } 
+        private RegisterDisplayMode displayMode = RegisterDisplayMode.Hexadecimal;
 
         public byte Low
         {

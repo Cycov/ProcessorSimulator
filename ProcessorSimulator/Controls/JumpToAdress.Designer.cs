@@ -40,7 +40,7 @@
             this.okBtn.Location = new System.Drawing.Point(92, 58);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(75, 23);
-            this.okBtn.TabIndex = 0;
+            this.okBtn.TabIndex = 3;
             this.okBtn.Text = "Go";
             this.okBtn.UseVisualStyleBackColor = true;
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
@@ -50,8 +50,9 @@
             this.segmentTb.Location = new System.Drawing.Point(67, 6);
             this.segmentTb.Name = "segmentTb";
             this.segmentTb.Size = new System.Drawing.Size(100, 20);
-            this.segmentTb.TabIndex = 1;
+            this.segmentTb.TabIndex = 2;
             this.segmentTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            this.segmentTb.MaxLength = 4;
             // 
             // label1
             // 
@@ -59,7 +60,7 @@
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 30;
             this.label1.Text = "Segment";
             // 
             // offsetTb
@@ -69,6 +70,7 @@
             this.offsetTb.Size = new System.Drawing.Size(100, 20);
             this.offsetTb.TabIndex = 1;
             this.offsetTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            this.offsetTb.MaxLength = 4;
             // 
             // label2
             // 
@@ -76,7 +78,7 @@
             this.label2.Location = new System.Drawing.Point(12, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 31;
             this.label2.Text = "Offset";
             // 
             // JumpToAdress

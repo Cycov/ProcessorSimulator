@@ -20,7 +20,6 @@ namespace ProcessorSimulator.Assembler
                 if (string.IsNullOrWhiteSpace(currentLine))
                     continue;
 
-
                 string[] t1 = currentLine.Split(new char[] { ' ', ',' });
 
                 string[] currentLineParts = new string[4];
@@ -53,6 +52,9 @@ namespace ProcessorSimulator.Assembler
                         {
                             Operand destinationOperand = ParseOperand(lineIndex, currentLineParts[1]);
                             Operand sourceOperand = ParseOperand(lineIndex, currentLineParts[2]);
+                            if (destinationOperand.AdressingMode == AdressingTypes.AM)
+                                throw new ParseException(lineIndex, "Illegal addresing mode");
+
                             instruction = (ushort)(instruction << 12 | (int)(sourceOperand.AdressingMode) << 10 | sourceOperand.Register << 6 |
                                                                        (int)(destinationOperand.AdressingMode) << 4 | destinationOperand.Register);
                             parsedCode[address++] = instruction;
@@ -65,6 +67,9 @@ namespace ProcessorSimulator.Assembler
                     case 1:
                         {
                             Operand destinationOperand = ParseOperand(lineIndex, currentLineParts[1]);
+                            if (destinationOperand.AdressingMode == AdressingTypes.AM)
+                                throw new ParseException(lineIndex, "Illegal addresing mode");
+
                             instruction = (ushort)(instruction << 6 | (int)(destinationOperand.AdressingMode) << 4 | destinationOperand.Register);
                             parsedCode[address++] = instruction;
                             if (destinationOperand.AdressingMode == AdressingTypes.AM || destinationOperand.AdressingMode == AdressingTypes.AX)

@@ -129,9 +129,9 @@ namespace ProcessorSimulator
             DrawVerticalCommandArrow(g, otherOperationsSourcePanel.Bounds, DataBuses.SBUS, "Pd1", 0.714);
             DrawVerticalCommandArrow(g, otherOperationsSourcePanel.Bounds, DataBuses.SBUS, "Pd-1", 0.857);
 
-            g.DrawString("RBUS", Font, Brushes.Black, Width - busesPadding - 10, GetBusY(DataBuses.RBUS) - 15);
-            g.DrawString("DBUS", Font, Brushes.Black, Width - busesPadding - 10, GetBusY(DataBuses.DBUS) - 15);
-            g.DrawString("SBUS", Font, Brushes.Black, Width - busesPadding - 10, GetBusY(DataBuses.SBUS) - 15);
+            //g.DrawString("RBUS", Font, Brushes.Black, Width - busesPadding - 10, GetBusY(DataBuses.RBUS) - 15);
+            //g.DrawString("DBUS", Font, Brushes.Black, Width - busesPadding - 10, GetBusY(DataBuses.DBUS) - 15);
+            //g.DrawString("SBUS", Font, Brushes.Black, Width - busesPadding - 10, GetBusY(DataBuses.SBUS) - 15);
         }
 
         private Pen GetPenThin(string command)

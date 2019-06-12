@@ -29,6 +29,12 @@ namespace ProcessorSimulator
                 System.Windows.Forms.MessageBox.Show("Program finished");
             }
             DeactivateCommands();
+            if (IsIllegalinstruction())
+            {
+                runTimer.Stop();
+                System.Windows.Forms.MessageBox.Show("Illegal instruction detected. Halting program");
+            }
+
             RegisterMIR.LongValue = MPM[RegisterMAR.Value];
             ExecuteSBUSOperation(RegisterMIR.GetSBUS());
             ExecuteDBUSOperation(RegisterMIR.GetDBUS());
@@ -39,6 +45,57 @@ namespace ProcessorSimulator
             ExecuteIndexOperation(RegisterMIR.GetCOND(), false, RegisterMIR.GetJUMPBASE(), RegisterMIR.GetINDEX());
 
             Invalidate();
+        }
+
+        private bool IsIllegalinstruction()
+        {
+            switch (GetInstructionClass())
+            {
+                case 0:
+                    {
+                        if ((RegisterMIR.Value >> 12) == 0x7)
+                            return true;
+                    }
+                    break;
+                case 1:
+                    {
+                        if ((RegisterMIR.Value >> 6) == 0x020f |
+                            (RegisterMIR.Value >> 10) == 0x0021 |
+                            (RegisterMIR.Value >> 11) == 0x0011 |
+                            (RegisterMIR.Value >> 12) == 0x0009f)
+                            return true;
+                    }
+                    break;
+                case 2:
+                    {
+                        if ((RegisterMIR.Value >> 8) == 0x00c9 |
+                            (RegisterMIR.Value >> 9) == 0x0065 |
+                            (RegisterMIR.Value >> 10) == 0x0033 |
+                            (RegisterMIR.Value >> 12) == 0x000d)
+                            return true;
+                    }
+                    break;
+                case 3:
+                    {
+                        var woClass = RegisterMIR.Value & 0x1fff;
+                        if (woClass == 0x0013 |
+                            (woClass >> 2) == 0x0005 |
+                            (woClass >> 3) == 0x0003 |
+                            (woClass >> 5) == 0x0001 |
+                            (woClass >> 6) == 0x0001 |
+                            (woClass >> 7) == 0x0001 |
+                            (woClass >> 8) == 0x0001 |
+                            (woClass >> 9) == 0x0001 |
+                            (woClass >> 10) == 0x0001 |
+                            (woClass >> 11) == 0x0001 |
+                            (woClass >> 12) == 0x0001)
+                            return true;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            return false;
         }
 
         private void DeactivateCommands()
@@ -389,9 +446,9 @@ namespace ProcessorSimulator
                 case 2: return ((registerIR.Value >> 10) & 0x00000003) << 1;
                 case 3: return ((registerIR.Value >> 4) & 0x00000003) << 1;
                 case 4: return ((registerIR.Value >> 12) & 0x00000007) << 1;
-                case 5: return ((registerIR.Value >> 6) & 0x0000007f) << 1;
+                case 5: return ((registerIR.Value >> 6) & 0x0000007f) << 2;
                 case 6: return ((registerIR.Value >> 8) & 0x0000001f) << 1;
-                case 7: return (registerIR.Value & 0x00001ffff) << 1;
+                case 7: return (registerIR.Value & 0x00001ffff) << 2;
                 default: return 0;
             }
         }
@@ -451,9 +508,7 @@ namespace ProcessorSimulator
                 case 13: return register13.Value;
                 case 14: return register14.Value;
                 case 15: return register15.Value;
-                default:
-                    return 0;
-                    break;
+                default: return 0;
             }
         }
         private void SetRegisterValue(int register, ushort value)
