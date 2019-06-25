@@ -1,4 +1,14 @@
-﻿using AssemblySimulator.EventArgs;
+//-----------------------------------------------------------------------
+
+// <copyright file="MIRRegister.cs" author="Circa Dragos">
+
+//     Copyright (c) Circa Dragos. All rights reserved.
+
+// </copyright>
+
+//-----------------------------------------------------------------------
+
+using AssemblySimulator.EventArgs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

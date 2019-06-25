@@ -1,4 +1,14 @@
-﻿namespace ProcessorSimulator
+//-----------------------------------------------------------------------
+
+// <copyright file="MainForm.Designer.cs" author="Circa Dragos">
+
+//     Copyright (c) Circa Dragos. All rights reserved.
+
+// </copyright>
+
+//-----------------------------------------------------------------------
+
+namespace ProcessorSimulator
 {
     partial class MainForm
     {

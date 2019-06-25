@@ -1,4 +1,14 @@
-﻿namespace ProcessorSimulator.Controls
+//-----------------------------------------------------------------------
+
+// <copyright file="MemoryDisplay.Designer.cs" author="Circa Dragos">
+
+//     Copyright (c) Circa Dragos. All rights reserved.
+
+// </copyright>
+
+//-----------------------------------------------------------------------
+
+namespace ProcessorSimulator.Controls
 {
     partial class MemoryDisplay
     {

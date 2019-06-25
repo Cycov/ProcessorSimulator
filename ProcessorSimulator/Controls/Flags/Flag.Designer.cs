@@ -1,4 +1,14 @@
-﻿namespace Simulator.Controls.Flags
+//-----------------------------------------------------------------------
+
+// <copyright file="Flag.Designer.cs" author="Circa Dragos">
+
+//     Copyright (c) Circa Dragos. All rights reserved.
+
+// </copyright>
+
+//-----------------------------------------------------------------------
+
+namespace Simulator.Controls.Flags
 {
     partial class Flag
     {

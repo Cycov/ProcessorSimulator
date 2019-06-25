@@ -1,4 +1,14 @@
-﻿using System.Drawing;
+//-----------------------------------------------------------------------
+
+// <copyright file="CodeDisplay.cs" author="Circa Dragos">
+
+//     Copyright (c) Circa Dragos. All rights reserved.
+
+// </copyright>
+
+//-----------------------------------------------------------------------
+
+using System.Drawing;
 using System.Windows.Forms;
 using AssemblySimulator.EventArgs;
 

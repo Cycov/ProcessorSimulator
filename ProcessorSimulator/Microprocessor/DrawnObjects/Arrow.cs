@@ -1,4 +1,14 @@
-﻿using System.Drawing;
+//-----------------------------------------------------------------------
+
+// <copyright file="Arrow.cs" author="Circa Dragos">
+
+//     Copyright (c) Circa Dragos. All rights reserved.
+
+// </copyright>
+
+//-----------------------------------------------------------------------
+
+using System.Drawing;
 
 namespace Simulator.Microprocessor.DrawnObjects
 {

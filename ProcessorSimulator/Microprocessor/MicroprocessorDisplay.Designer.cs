@@ -1,4 +1,14 @@
-﻿namespace Simulator.Microprocessor
+//-----------------------------------------------------------------------
+
+// <copyright file="MicroprocessorDisplay.Designer.cs" author="Circa Dragos">
+
+//     Copyright (c) Circa Dragos. All rights reserved.
+
+// </copyright>
+
+//-----------------------------------------------------------------------
+
+namespace Simulator.Microprocessor
 {
     partial class MicroprocessorDisplay
     {

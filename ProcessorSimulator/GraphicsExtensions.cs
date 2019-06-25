@@ -1,4 +1,14 @@
-﻿using System;
+//-----------------------------------------------------------------------
+
+// <copyright file="GraphicsExtensions.cs" author="Circa Dragos">
+
+//     Copyright (c) Circa Dragos. All rights reserved.
+
+// </copyright>
+
+//-----------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
